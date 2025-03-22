@@ -1,0 +1,106 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e7e7e7; /* Light gray background */
+  color: #333; /* Dark text color */
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h1 {
+  text-align: center;
+  color: #5c6bc0; /* Purple accent color */
+  font-size: 32px; /* Larger title size */
+  margin: 0 0 20px; /* Bottom margin adjusted */
+}
+
+#display-tasks {
+  margin-top: 30px;
+}
+
+#list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin: 12px 0;
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  font-size: 18px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+#list-item:hover {
+  background-color: #dcd9d9; /* Slightly darker background on hover */
+}
+
+#deleteBtn {
+  background: none;
+  border: none;
+  color: #e53935; /* Red color for delete button */
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#deleteBtn:hover {
+  color: #c62828; /* Darker red on hover */
+}
+
+#add-task-block {
+  margin-bottom: 20px;
+  justify-items: center;
+}
+
+#add-task-block form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7; /* White background */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#add-task-block input[type="text"] {
+  flex: 1; /* Take remaining space */
+  padding: 14px;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+#add-task-block button {
+  margin-left: 10px; /* Space between input and button */
+  padding: 14px 30px;
+  border: none;
+  background-color: #5c6bc0; /* Purple background */
+  color: #fff; /* White text color */
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-task-block button:hover {
+  background-color: #3f4e8c; /* Darker shade of purple on hover */
+}
+.todo-title {
+  text-align: center;
+  color: #5c6bc0; /* Purple accent color */
+  font-size: 32px; /* Larger title size */
+  margin: 0 0 20px; /* Bottom margin adjusted */
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+}
