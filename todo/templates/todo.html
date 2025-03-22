@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{user}}'s Todos</title>
+    <link rel="stylesheet" href="{% static 'todoStyles.css' %}" />
+    {% comment %} <link rel="stylesheet" href="../static/todoStyles.css" /> {% endcomment %}
+  </head>
+
+  <body>
+    <div class="container">
+      <div style="display: flex; align-items: center;justify-content: space-between; padding: 10px;">
+        <h1 class="todo-title" style="flex: 1; text-align: center; margin: 0;">{{ user }}'s To-Do List</h1>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" style="border: none; background: none;"><img src="../static/logout.svg" style="width: 20px; cursor: pointer; padding-right: 20px;" title="Logout" /></button>
+        </form>
+      </div>
+
+      <div id="add-task-block">
+        <form action="{% url 'home' %}" method="post">
+          {% csrf_token %}
+          <input type="text" id="task" name="task" placeholder="Add task here..." />
+          <button id="addBtn" type="submit">Add</button>
+        </form>
+      </div>
+
+      <div id="display-tasks">
+        <ol>
+          {% for task in tasks %}
+            <li id="list-item">
+              {{ task.title }}
+
+              <form action="{% url 'delete_task' task.srno %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" id="deleteBtn">❌</button>
+              </form>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
